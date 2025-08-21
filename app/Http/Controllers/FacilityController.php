@@ -31,7 +31,7 @@ class FacilityController extends Controller
         // Filter by material
         if ($request->has('material_filter') && $request->material_filter) {
             $query->whereHas('materials', function($materialQuery) use ($request) {
-                $materialQuery->where('id', $request->material_filter);
+                $materialQuery->where('materials.id', $request->material_filter);
             });
         }
 
